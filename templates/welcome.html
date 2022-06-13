@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+ {% block title %}
+    Home page 
+ {% endblock %}
+
+ {% block content %}
+ <h1>Air Pollution Detection </h1>
+ <p>A world without Pollution</p>
+ <div style="text-align:center">
+ <video id="video1" width="420" height="240" autoplay>
+   <source src="{{url_for('static',filename='video.mp4')}}" type="video/mp4">
+ </video>
+ </div>
+{% endblock %}
+
+

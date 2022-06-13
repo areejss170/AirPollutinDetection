@@ -1,0 +1,103 @@
+{% extends 'base.html'%}
+ {% block title %}
+    Report page
+ {% endblock %}
+
+ {% block content %}
+ <div class="container">
+    <h1 class="form__title">Result</h1>
+    {% if prediction == [0] %}
+   <table class="table table-success">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Good</td>
+           <td>minimal impact</td>
+         </tr>
+       </tbody>
+   </table>
+   
+    {% elif prediction == [1] %}
+    <table class="table table-info">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Satisfactory</td>
+           <td>Minor Breathing Discomfort to sensitive people</td>
+         </tr>
+       </tbody>
+   </table>
+    {% elif prediction == [2] %}
+    <table class="table table-secondary">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Moderate</td>
+           <td>Breathing discomfort to people with lung, heart disease ,children and older adult</td>
+         </tr>
+       </tbody>
+   </table>
+    {% elif prediction == [3] %}
+    <table class="table table-warning">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Poor</td>
+           <td>Breathing discomfort to people in prolonged exposure </td>
+         </tr>
+       </tbody>
+   </table>
+    {% elif prediction == [4] %}
+    <table class="table table-danger">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Very Poor</td>
+           <td>Respiratory illness to the people on prolonged exposure </td>
+         </tr>
+       </tbody>
+   </table>
+    {% elif prediction == [5] %}
+    <table class="table table-danger">
+      <thead>
+         <tr>
+           <th scope="col">Pollution</th>
+           <th scope="col">Health effect</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>Severe</td>
+           <td>Respiratory effect even on healthy people</td>
+         </tr>
+       </tbody>
+   </table>
+    {% endif %}
+ </div>
+
+ {% endblock %}

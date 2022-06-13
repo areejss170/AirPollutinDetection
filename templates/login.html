@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+ {% block title %}
+    Login page
+ {% endblock %}
+
+ {% block content %}
+<div class="container">
+<h1 class="form__title">Log in</h1>
+    <form class="form"  method="post">
+        {{ form.hidden_tag() }} <!--security code -->
+        <div class="form__input-group">
+            {{ form.username.label() }}
+            {{ form.username(class="form__input", placeholder="User Name") }}
+            <br>
+            {{ form.password.label() }}
+            {{ form.password(class="form__input", placeholder="Password") }}
+            <br>
+            <p class="form__text">
+                <a class="form__link" href="{{url_for('signin')}}" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+            {{ form.submit(class="form__button") }}
+        </div>
+    </form>
+ </div>
+ {% endblock %}

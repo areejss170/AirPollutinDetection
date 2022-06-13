@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+ {% block title %}
+    Report page
+ {% endblock %}
+
+ {% block content %}
+
+ <div class="container">
+<h1 class="form__title">Air pollution detection</h1>
+    <form  id="rpoerForm" class="form"  method="post" >
+        <div class="form__input-group">
+           <label for="City">Select city</label>
+           {{ form.city (class="dropdown-item ") }}
+      <br>
+      <br>
+      <label for="AQI">Enter AQI value between 0-500</label>
+      <br>
+      {{ form.AQI(class="form__input", placeholder="AQI") }}
+      <br>
+      <br>
+      {{ form.submit(class="form__button" , id="submit") }}
+        </div>
+    </form>
+    <br>
+    <!--{{ Prediction_text }} -->
+ </div>
+
+ {% endblock %}
